@@ -1,0 +1,21 @@
+[
+    {
+        "id": "widgetSDK",
+        "value": "[{\"showRefreshButton\":\"true\",\"widgets\":[{\"url\":\"https://inspicio.verizonwireless.com/\",\"name\":\"Inspicio Widget\",\"title\":\"Inspicio\",\"startState\":\"interactive\",\"showOnInit\":\"false\",\"messaging\":{\"enable\":\"true\",\"authenticated\":\"true\",\"unauthenticated\":\"true\"}}]}]"
+    }
+]
+
+[
+    {
+        "id": "[     {         \"id\": \"widgetSDK\",         \"value\": \"[{\\\"showRefreshButton\\\":\\\"true\\\",\\\"widgets\\\":[{\\\"url\\\":\\\"https://inspicio.verizonwireless.com/\\\",\\\"name\\\":\\\"Inspicio Widget\\\",\\\"title\\\":\\\"Inspicio\\\",\\\"startState\\\":\\\"interactive\\\",\\\"showOnInit\\\":\\\"false\\\",\\\"messaging\\\":{\\\"enable\\\":\\\"true\\\",\\\"authenticated\\\":\\\"true\\\",\\\"unauthenticated\\\":\\\"true\\\"}}]}]\"     } ]",
+        "value": ""
+    }
+]
+
+
+[
+    {
+        "id": "widgetSDK",
+        "value": "[{\"showRefreshButton\":\"true\",\"widgets\":[{\"url\":\"https://inspicio.verizonwireless.com/\",\"name\":\"Inspicio Widget\",\"title\":\"Inspicio\",\"startState\":\"interactive\",\"showOnInit\":\"false\",\"messaging\":{\"enable\":\"true\",\"authenticated\":\"true\",\"unauthenticated\":\"true\"}}]}]"
+    }
+]

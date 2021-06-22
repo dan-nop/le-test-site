@@ -1,0 +1,97 @@
+{
+    "hash": "-2020720031",
+    "bot": {
+      "id": "e8900c8e-4c67-4dec-8095-e5344867da93",
+      "name": "DEV - Skill  Prioritizer Bot ",
+      "chatBotType": "CUSTOMER_FACING_BOT",
+      "description": "Routes bot from priority skills to main skills in order to take advantage of Queue Prioritization rules.",
+      "status": "NEW",
+      "getStartedButtonPayload": "hi",
+      "creationTime": 1595345261576,
+      "modificationTime": 1595345298557,
+      "demo": false,
+      "skipNLP": false,
+      "language": "en-US",
+      "sessionLength": 0,
+      "passThroughMode": false,
+      "transcriptDisabled": false,
+      "version": "2",
+      "publicBot": false,
+      "readOnly": false
+    },
+    "responder": [],
+    "requiredContext": [],
+    "conversationMessage": [
+      {
+        "id": "61d7058d4688a966fd6d154904a2534370072e7d",
+        "chatBotId": "e8900c8e-4c67-4dec-8095-e5344867da93",
+        "name": "transfer",
+        "type": "BOT_MESSAGE",
+        "content": {
+          "contentType": "DYNAMIC",
+          "results": {
+            "type": "ESCALATION",
+            "tile": {
+              "tileData": [
+                {
+                  "text": "BLANK_MESSAGE",
+                  "buttons": [],
+                  "quickReplyList": [],
+                  "escalation": {
+                    "agentSkillId": "{$botContext.destinationSkillId}",
+                    "tangoContextEnabled": false
+                  }
+                }
+              ]
+            }
+          }
+        },
+        "preProcessMessage": "var currentSkill = botContext.getLPEngagementAttribute(\"currentSkillId\");\nbotContext.printDebugMessage(\"currentSkillId: \" + currentSkill);\nvar previousSkill = botContext.getLPEngagementAttribute(\"previousSkillId\");\nbotContext.printDebugMessage(\"previousSkillId: \" + previousSkill);\n\nvar defaultSkill = 2154469530;\nvar transferRules = [\n  { \"sourceId\": 2156172030, \"sourceName\": \"~Home SMB Sales: P1\", \"destinationName\": \"Home SMB Sales\", \"destinationId\": 2154469530 },\n  { \"sourceId\": 2156172830, \"sourceName\": \"~Home SMB Sales: P2\", \"destinationName\": \"Home SMB Sales\", \"destinationId\": 2154469530 },\n  { \"sourceId\": 2156172930, \"sourceName\": \"~Home SMB Sales: P3\", \"destinationName\": \"Home SMB Sales\", \"destinationId\": 2154469530 },\n  { \"sourceId\": 2156173030, \"sourceName\": \"~Home SMB Sales: P4\", \"destinationName\": \"Home SMB Sales\", \"destinationId\": 2154469530 },\n  { \"sourceId\": 2156173130, \"sourceName\": \"~Home SMB Sales: P5\", \"destinationName\": \"Home SMB Sales\", \"destinationId\": 2154469530 }\n];\n\nfor (var i=0, l = transferRules.length; i < l; i++) {\n  if(transferRules[i].sourceId == currentSkill) {\n    var match = transferRules[i];\n    botContext.printDebugMessage(\"match: \"+JSON.stringify(match));\n    break;\n  }\n}\n\nif (match && match.destinationId) {\n  destinationSkill = match.destinationId;\n} else if (previousSkill) {\n  destinationSkill = previousSkill;\n} else {\n  destinationSkill = defaultSkill;\n}\n\nbotContext.printDebugMessage(\"destinationSkill: \" + destinationSkill);\nbotContext.setBotVariable(\"destinationSkillId\", destinationSkill, true);\n\nbotContext.destionationSkillId = destinationSkill;",
+        "group": "29964d58-f1aa-42c2-a534-21cfa8dd8ec5",
+        "status": "ACTIVE",
+        "required": true,
+        "responseMatches": [
+          {
+            "name": "RULE_1",
+            "conditions": [],
+            "contextConditions": [],
+            "action": {
+              "name": "INTERACTION",
+              "value": "next"
+            },
+            "contextDataVariables": []
+          }
+        ],
+        "interactionType": "ESCALATION",
+        "changeResponse": {
+          "enabled": true
+        },
+        "cancelResponse": {
+          "enabled": true
+        }
+      }
+    ],
+    "menus": [],
+    "groups": [
+      {
+        "id": "29964d58-f1aa-42c2-a534-21cfa8dd8ec5",
+        "name": "Main (Fallback)",
+        "chatBotId": "e8900c8e-4c67-4dec-8095-e5344867da93",
+        "creationTime": "2020-07-21 11:27:41",
+        "modificationTime": "2020-07-21 11:27:41",
+        "dialogType": "FALLBACK_DIALOG",
+        "status": "ENABLED",
+        "disambiguteOnlySelectedDomains": false
+      }
+    ],
+    "platforms": [
+      {
+        "id": "4b506a549221315fbfed52ccd0404b78e7f493e2",
+        "chatbotId": "e8900c8e-4c67-4dec-8095-e5344867da93",
+        "integrationType": "HTMLCLIENT",
+        "platform": "HTMLCLIENT",
+        "status": "NEW"
+      }
+    ],
+    "associatedDomains": []
+  }
