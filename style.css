@@ -1,17 +1,33 @@
-.lpc_window_slider-open {
+@media (min-width:380px)  { /* smartphones, iPhone, portrait 480x380 phones */ 
+    .lpc_window_slider-open {
 
-    height: 870px!important;
-
+        height: 400px!important;
+    
+    }
+    .lpc_slider {
+    
+        width: 300px!important;
+        height: 400px!important;
+    
+    }
 }
+@media (min-width:481px)  { /* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */ }
+@media (min-width:641px)  { /* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */ }
+@media (min-width:961px)  { /* tablet, landscape iPad, lo-res laptops ands desktops */ 
+    .lpc_window_slider-open {
 
-
-.lpc_slider {
-
-    width: 680px!important;
-    height: 870px!important;
-
+        height: 870px!important;
+    
+    }
+    .lpc_slider {
+    
+        width: 680px!important;
+        height: 870px!important;
+    
+    }
 }
-
+@media (min-width:1025px) { /* big landscape tablets, laptops, and desktops */ }
+@media (min-width:1281px) { /* hi-res laptops and desktops */ }
 
 .lpc_maximized-header__slider-button {
 
