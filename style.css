@@ -28,5 +28,5 @@
 }
 
 :focus {
-    border-style: dotted !important;
+    border-style: dashed !important;
 }
