@@ -27,7 +27,7 @@
 
 }
 
-.LPMcontainer, :focus {
+.LPMcontainer :focus {
     border-style: dashed !important;
     color: #747676 !important;
 }
