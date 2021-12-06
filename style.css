@@ -26,8 +26,8 @@
     display:none!important;
 
 }
-/* 
-:focus {
+
+.LPMcontainer, :focus {
     border-style: dashed !important;
     color: #747676;
-} */
+}
