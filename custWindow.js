@@ -1,12 +1,11 @@
-hideLPChatButton() => {
-    lpTag.events.hasFired('RENDERER_STUB', 'AFTER_CREATE_ENGAGEMENT_INSTANCE').forEach(e => {
+function hideLPChatButton() {
+    lpTag.events.hasFired('RENDERER_STUB', 'AFTER_CREATE_ENGAGEMENT_INSTANCE').forEach(function (e) {
         // checks engagement type of embedded
         if (e.data.eng.engData.engagementType === 5) {
             document.getElementById(e.data.eng.mainContainer.id).style.display="none";
         }
     });
 }
-
 
 // const CONST = {
 //     NEW_AGENT_TYPING_INDICATOR: "Incoming message",
