@@ -1,21 +1,287 @@
-[
-    {
-        "id": "widgetSDK",
-        "value": "[{\"showRefreshButton\":\"true\",\"widgets\":[{\"url\":\"https://inspicio.verizonwireless.com/\",\"name\":\"Inspicio Widget\",\"title\":\"Inspicio\",\"startState\":\"interactive\",\"showOnInit\":\"false\",\"messaging\":{\"enable\":\"true\",\"authenticated\":\"true\",\"unauthenticated\":\"true\"}}]}]"
-    }
-]
-
-[
-    {
-        "id": "[     {         \"id\": \"widgetSDK\",         \"value\": \"[{\\\"showRefreshButton\\\":\\\"true\\\",\\\"widgets\\\":[{\\\"url\\\":\\\"https://inspicio.verizonwireless.com/\\\",\\\"name\\\":\\\"Inspicio Widget\\\",\\\"title\\\":\\\"Inspicio\\\",\\\"startState\\\":\\\"interactive\\\",\\\"showOnInit\\\":\\\"false\\\",\\\"messaging\\\":{\\\"enable\\\":\\\"true\\\",\\\"authenticated\\\":\\\"true\\\",\\\"unauthenticated\\\":\\\"true\\\"}}]}]\"     } ]",
-        "value": ""
-    }
-]
-
-
-[
-    {
-        "id": "widgetSDK",
-        "value": "[{\"showRefreshButton\":\"true\",\"widgets\":[{\"url\":\"https://inspicio.verizonwireless.com/\",\"name\":\"Inspicio Widget\",\"title\":\"Inspicio\",\"startState\":\"interactive\",\"showOnInit\":\"false\",\"messaging\":{\"enable\":\"true\",\"authenticated\":\"true\",\"unauthenticated\":\"true\"}}]}]"
-    }
-]
+{
+	"sortType": "S1",
+	"fixedFifoProbability": 1,
+	"businessRules": {
+		"nativePriority": {
+			"highPrioritySkillsList": [
+				{
+					"highPrioritySkillId": 1691154030,
+					"velocity": 16
+				},
+				{
+					"highPrioritySkillId": 1760025130,
+					"velocity": 16
+				},
+				{
+					"highPrioritySkillId": 1649225730,
+					"velocity": 16
+				},
+				{
+					"highPrioritySkillId": 1943987930,
+					"velocity": 16
+				},
+				{
+					"highPrioritySkillId": 2289864130,
+					"velocity": 16
+				},
+				{
+					"highPrioritySkillId": 3520791930,
+					"velocity": 16
+				},
+				{
+					"highPrioritySkillId": 3481713030,
+					"velocity": 20,
+					"velocityOperator": "Power"
+				}
+			]
+		},
+		"transfer": {
+			"transferVelocitiesList": [
+				{
+					"sourceSkillId": 1998453130,
+					"destinationSkillId": 1998451130,
+					"velocity": 1,
+					"velocityOperator": "Power"
+				},
+				{
+					"sourceSkillId": 1998455430,
+					"destinationSkillId": 1998451130,
+					"velocity": 2,
+					"velocityOperator": "Power"
+				},
+				{
+					"sourceSkillId": 1998456030,
+					"destinationSkillId": 1998451130,
+					"velocity": 3,
+					"velocityOperator": "Power"
+				},
+				{
+					"sourceSkillId": 1998462530,
+					"destinationSkillId": 1998451130,
+					"velocity": 4,
+					"velocityOperator": "Power"
+				},
+				{
+					"sourceSkillId": 1998465230,
+					"destinationSkillId": 1998451130,
+					"velocity": 5,
+					"velocityOperator": "Power"
+				},
+				{
+					"sourceSkillId": 1998465730,
+					"destinationSkillId": 1998451330,
+					"velocity": 1,
+					"velocityOperator": "Power"
+				},
+				{
+					"sourceSkillId": 1998468530,
+					"destinationSkillId": 1998451330,
+					"velocity": 2,
+					"velocityOperator": "Power"
+				},
+				{
+					"sourceSkillId": 1998468930,
+					"destinationSkillId": 1998451330,
+					"velocity": 3,
+					"velocityOperator": "Power"
+				},
+				{
+					"sourceSkillId": 1998469130,
+					"destinationSkillId": 1998451330,
+					"velocity": 4,
+					"velocityOperator": "Power"
+				},
+				{
+					"sourceSkillId": 1998469530,
+					"destinationSkillId": 1998451330,
+					"velocity": 5,
+					"velocityOperator": "Power"
+				},
+				{
+					"sourceSkillId": 1998471930,
+					"destinationSkillId": 1998452530,
+					"velocity": 1,
+					"velocityOperator": "Power"
+				},
+				{
+					"sourceSkillId": 1998471330,
+					"destinationSkillId": 1998452530,
+					"velocity": 2,
+					"velocityOperator": "Power"
+				},
+				{
+					"sourceSkillId": 1998470330,
+					"destinationSkillId": 1998452530,
+					"velocity": 3,
+					"velocityOperator": "Power"
+				},
+				{
+					"sourceSkillId": 1998469430,
+					"destinationSkillId": 1998452530,
+					"velocity": 4,
+					"velocityOperator": "Power"
+				},
+				{
+					"sourceSkillId": 1998468730,
+					"destinationSkillId": 1998452530,
+					"velocity": 5,
+					"velocityOperator": "Power"
+				},
+				{
+					"sourceSkillId": 1998468330,
+					"destinationSkillId": 1998452330,
+					"velocity": 1,
+					"velocityOperator": "Power"
+				},
+				{
+					"sourceSkillId": 1998467630,
+					"destinationSkillId": 1998452330,
+					"velocity": 2,
+					"velocityOperator": "Power"
+				},
+				{
+					"sourceSkillId": 1998467430,
+					"destinationSkillId": 1998452330,
+					"velocity": 3,
+					"velocityOperator": "Power"
+				},
+				{
+					"sourceSkillId": 1998467230,
+					"destinationSkillId": 1998452330,
+					"velocity": 4,
+					"velocityOperator": "Power"
+				},
+				{
+					"sourceSkillId": 1998466630,
+					"destinationSkillId": 1998452330,
+					"velocity": 5,
+					"velocityOperator": "Power"
+				},
+				{
+					"sourceSkillId": 3533394130,
+					"destinationSkillId": 1998452330,
+					"velocity": 6,
+					"velocityOperator": "Power"
+				},
+				{
+					"sourceSkillId": 3533394530,
+					"destinationSkillId": 1998452330,
+					"velocity": 7,
+					"velocityOperator": "Power"
+				},
+				{
+					"sourceSkillId": 3533395230,
+					"destinationSkillId": 1998452330,
+					"velocity": 8,
+					"velocityOperator": "Power"
+				},
+				{
+					"sourceSkillId": 3533395630,
+					"destinationSkillId": 1998452330,
+					"velocity": 9,
+					"velocityOperator": "Power"
+				},
+				{
+					"sourceSkillId": 3533396430,
+					"destinationSkillId": 1998452330,
+					"velocity": 10,
+					"velocityOperator": "Power"
+				},
+				{
+					"sourceSkillId": 2324663430,
+					"destinationSkillId": 2324593430,
+					"velocity": 11,
+					"velocityOperator": "Power"
+				},
+				{
+					"sourceSkillId": 2324663530,
+					"destinationSkillId": 2324593430,
+					"velocity": 12,
+					"velocityOperator": "Power"
+				},
+				{
+					"sourceSkillId": 2324663930,
+					"destinationSkillId": 2324593430,
+					"velocity": 13,
+					"velocityOperator": "Power"
+				},
+				{
+					"sourceSkillId": 2324664330,
+					"destinationSkillId": 2324593430,
+					"velocity": 14,
+					"velocityOperator": "Power"
+				},
+				{
+					"sourceSkillId": 2324664630,
+					"destinationSkillId": 2324593430,
+					"velocity": 15,
+					"velocityOperator": "Power"
+				},
+				{
+					"sourceSkillId": 3481715630,
+					"destinationSkillId": 3481713030,
+					"velocity": 11,
+					"velocityOperator": "Power"
+				},
+				{
+					"sourceSkillId": 3481716230,
+					"destinationSkillId": 3481713030,
+					"velocity": 12,
+					"velocityOperator": "Power"
+				},
+				{
+					"sourceSkillId": 3481716430,
+					"destinationSkillId": 3481713030,
+					"velocity": 13,
+					"velocityOperator": "Power"
+				},
+				{
+					"sourceSkillId": 3481717030,
+					"destinationSkillId": 3481713030,
+					"velocity": 14,
+					"velocityOperator": "Power"
+				},
+				{
+					"sourceSkillId": 3481719930,
+					"destinationSkillId": 3481713030,
+					"velocity": 15,
+					"velocityOperator": "Power"
+				}
+			]
+		},
+		"backToQueue": {
+			"backToQueueSkillList": [
+				{
+					"skillId": 1998451130,
+					"velocity": 4,
+					"velocityOperator": "Power"
+				},
+				{
+					"skillId": 1998451330,
+					"velocity": 4,
+					"velocityOperator": "Power"
+				},
+				{
+					"skillId": 1998452530,
+					"velocity": 4,
+					"velocityOperator": "Power"
+				},
+				{
+					"skillId": 1998452330,
+					"velocity": 4,
+					"velocityOperator": "Power"
+				},
+				{
+					"skillId": 2324593430,
+					"velocity": 14,
+					"velocityOperator": "Power"
+				},
+				{
+					"skillId": 3481713030,
+					"velocity": 14,
+					"velocityOperator": "Power"
+				}
+			]
+		}
+	}
+}
