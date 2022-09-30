@@ -11,7 +11,7 @@ lpTag.external.dynamicOpeners = {
                 modified: false
             }
             lpTag.external.dynamicOpeners.proactiveEngagements.push(eng)
-            // console.log(containerId)
+            console.log(containerId)
             // if we already have a new opener change it immediately
             if (_newOpener) lpTag.external.dynamicOpeners.updateEngagementText(eng.engagementId, _newOpener)
         }
