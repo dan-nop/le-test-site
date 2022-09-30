@@ -31,9 +31,11 @@ c = {
             let nodeList = container?.children[0]?.children[0]?.childNodes;
             console.log(nodeList);
             if (!nodeList) { return false }
-            let currentOpener = Array.from(nodeList).find(node => {
+            // let currentOpener = Array.from(nodeList).find(node => {
+            //     return node.nodeType === 3 && node.length > 10
+            // })
+            Array.from(nodeList).find(node => {
                 console.log(node);
-                // return node.nodeType === 3 && node.length > 10
             })
             console.log(currentOpener);
             // how tall is the container for the displayed engagement?
