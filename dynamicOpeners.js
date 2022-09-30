@@ -2,6 +2,7 @@ lpTag.external = lpTag.external || {};
 lpTag.external.dynamicOpeners = {
     proactiveEngagements: [],
     identifyProactiveEngagementContainer: function (data) {
+        console.log(data);
         // is proactive
         if (data?.conf?.type === 1) {
             // store the engagementId:container mapping
