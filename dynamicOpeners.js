@@ -1,5 +1,5 @@
 lpTag.external = lpTag.external || {};
-lpTag.external.dynamicOpeners = {
+c = {
     proactiveEngagements: [],
     identifyProactiveEngagementContainer: function (data) {
         // console.log(data);
@@ -25,13 +25,14 @@ lpTag.external.dynamicOpeners = {
             })
             // get the container
             let container = document.getElementById(eng.container);
-            console.log("Container", container);
+            // console.log("Container", container);
 
             // find the current opener text node
             let nodeList = container?.children[0]?.children[0]?.childNodes;
             console.log(nodeList);
             if (!nodeList) { return false }
             let currentOpener = Array.from(nodeList).find(node => {
+                console.log(node);
                 return node.nodeType === 3 && node.length > 10
             })
             console.log(currentOpener);
