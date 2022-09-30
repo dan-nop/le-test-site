@@ -2,7 +2,7 @@ lpTag.external = lpTag.external || {};
 lpTag.external.dynamicOpeners = {
     proactiveEngagements: [],
     identifyProactiveEngagementContainer: function (data) {
-        console.log(data);
+        // console.log(data);
         // is proactive
         if (data?.conf?.type === 1) {
             // store the engagementId:container mapping
@@ -12,7 +12,6 @@ lpTag.external.dynamicOpeners = {
                 modified: false
             }
             lpTag.external.dynamicOpeners.proactiveEngagements.push(eng)
-            console.log(eng);
             // if we already have a new opener change it immediately
             if (_newOpener) lpTag.external.dynamicOpeners.updateEngagementText(eng.engagementId, _newOpener)
         }
@@ -29,7 +28,8 @@ lpTag.external.dynamicOpeners = {
             console.log("Container", container);
 
             // find the current opener text node
-            let nodeList = container?.children[0]?.children[0]?.childNodes
+            let nodeList = container?.children[0]?.children[0]?.childNodes;
+            console.log(nodeList);
             if (!nodeList) { return false }
             let currentOpener = Array.from(nodeList).find(node => {
                 return node.nodeType === 3 && node.length > 10
