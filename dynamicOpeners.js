@@ -25,17 +25,14 @@ c = {
             })
             // get the container
             let container = document.getElementById(eng.container);
-            // console.log("Container", container);
+            console.log("Container", container);
 
             // find the current opener text node
             let nodeList = container?.children[0]?.children[0]?.childNodes;
             console.log(nodeList);
             if (!nodeList) { return false }
-            // let currentOpener = Array.from(nodeList).find(node => {
-            //     return node.nodeType === 3 && node.length > 10
-            // })
-            Array.from(nodeList).find(node => {
-                console.log(node);
+            let currentOpener = Array.from(nodeList).find(node => {
+                return node.nodeType === 3 && node.length > 10
             })
             console.log(currentOpener);
             // how tall is the container for the displayed engagement?
