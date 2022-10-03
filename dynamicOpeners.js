@@ -33,7 +33,7 @@ lpTag.external.dynamicOpeners = {
             if (!nodeList) { return false }
             let currentOpener = Array.from(nodeList).find(node => {
                 console.log(node);
-                return node.nodeType === 3 && node.length > 10
+                return node.nodeType === 1 && node.length > 10
             })
             console.log(currentOpener);
             // how tall is the container for the displayed engagement?
