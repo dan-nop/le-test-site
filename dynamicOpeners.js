@@ -33,6 +33,7 @@ lpTag.external.dynamicOpeners = {
             if (!nodeList) { return false }
             let currentOpener = Array.from(nodeList).find(node => {
                 console.log(node);
+                console.log(node.length);
                 return node.nodeType === 3 && node.length > 10
             })
             console.log(currentOpener);
