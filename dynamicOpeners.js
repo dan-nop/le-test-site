@@ -24,6 +24,7 @@ lpTag.external.dynamicOpeners = {
                 return eng.engagementId === engagementId
             })
             // get the container
+            console.log("ENG", eng);
             let container = document.getElementById(eng.container);
             console.log("Container", container);
 
