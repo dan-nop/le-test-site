@@ -32,11 +32,12 @@ lpTag.external.dynamicOpeners = {
             let nodeList = container?.children[0]?.children[0]?.childNodes;
             console.log(nodeList);
             if (!nodeList) { return false }
-            let currentOpener = Array.from(nodeList).find(node => {
-                console.log(node);
-                return node.nodeType === 3 && node.length > 10
-            })
-            console.log(currentOpener);
+            // let currentOpener = Array.from(nodeList).find(node => {
+            //     console.log(node);
+            //     return node.nodeType === 3 && node.length > 10
+            // })
+            // console.log(currentOpener);
+            console.log("NODE LIST", Array.from(nodeList));
             // how tall is the container for the displayed engagement?
             let currentHeight = parseInt(container.children[0].style.height);
             // how tall is the speech bubble on the displayed engagement?
