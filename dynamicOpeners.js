@@ -24,9 +24,7 @@ lpTag.external.dynamicOpeners = {
                 return eng.engagementId === engagementId
             })
             // get the container
-            console.log("ENG", eng);
             let container = document.getElementById(eng.container);
-            console.log("Container", container);
 
             // get the current opener text node
             let nodeList = container?.children[0]?.children[0]?.childNodes;
@@ -84,7 +82,3 @@ lpTag.external.dynamicOpeners = {
 lpTag.events.bind('RENDERER_STUB','AFTER_CREATE_ENGAGEMENT_INSTANCE',lpTag.external.dynamicOpeners.identifyProactiveEngagementContainer)
 lpTag.events.bind('lpUnifiedWindow','windowClosed', () => window.localStorage.removeItem('dynamicOpeners.modifiedWelcomeMessage'))
 lpTag.hooks.push({ name: 'AFTER_GET_LINES', callback: lpTag.external.dynamicOpeners.updateWelcomeMessage })
-
-
-
-// var nodeList = container === null || container === void 0 ? void 0 : (_container$children$ = container.children[0]) === null || _container$children$ === void 0 ? void 0 : (_container$children$$ = _container$children$.children[0]) === null || _container$children$$ === void 0 ? void 0 : _container$children$$.childNodes;
