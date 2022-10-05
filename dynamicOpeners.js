@@ -28,26 +28,20 @@ lpTag.external.dynamicOpeners = {
             let container = document.getElementById(eng.container);
             console.log("Container", container);
 
-            // find the current opener text node
+            // get the current opener text node
             let nodeList = container?.children[0]?.children[0]?.childNodes;
             console.log(nodeList);
             if (!nodeList) { return false }
-            // let currentOpener = nodeList[3].innerText;
-            let currentOpener = Array.from(nodeList).find((node, index) => {
-                console.log(node, index);
-                return node.nodeType === 3 && node.length > 10
-            });
-            console.log(currentOpener);
-            // console.log("NODE LIST", Array.from(nodeList));
+            let currentOpener = nodeList[3].innerText;
+
             // how tall is the container for the displayed engagement?
             let currentHeight = parseInt(container.children[0].style.height);
             // how tall is the speech bubble on the displayed engagement?
             let currentBubbleHeight = container.children[0].children[0].clientHeight;
 
             // replace the engagement text
-            if (currentOpener) {
-                console.log("CURRENT OPERNER", currentOpener);
-                currentOpener.nodeValue = newOpener;
+            if (currentOpener) {;
+                nodeList.innerText = newOpener;
                 // how much has the height of the bubble changed due to the new text?
                 let newBubbleHeight = container.children[0].children[0].clientHeight;
                 // change the height of the engagement to account for the new bubble size and keep it aligned to the sticky
