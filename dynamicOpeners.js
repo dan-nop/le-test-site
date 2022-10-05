@@ -40,7 +40,7 @@ lpTag.external.dynamicOpeners = {
             let currentBubbleHeight = container.children[0].children[0].clientHeight;
 
             // replace the engagement text
-            if (currentOpener) {;
+            if (currentOpener) {
                 nodeList.innerText = newOpener;
                 // how much has the height of the bubble changed due to the new text?
                 let newBubbleHeight = container.children[0].children[0].clientHeight;
