@@ -47,7 +47,7 @@ lpTag.external.dynamicOpeners = {
             // replace the engagement text
             if (currentOpener) {
                 console.log("CURRENT OPERNER", currentOpener);
-                currentOpener.innerText = newOpener;
+                currentOpener.nodeValue = newOpener;
                 // how much has the height of the bubble changed due to the new text?
                 let newBubbleHeight = container.children[0].children[0].clientHeight;
                 // change the height of the engagement to account for the new bubble size and keep it aligned to the sticky
