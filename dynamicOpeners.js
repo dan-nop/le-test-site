@@ -54,7 +54,7 @@ lpTag.external.dynamicOpeners = {
                     eng.modified = true;
                     eng.newOpener = newOpener;
                 }
-            })
+            }, false);
         }
         catch (e) {
             console.error(e)
