@@ -33,10 +33,10 @@ lpTag.external.dynamicOpeners = {
                 return container
             }
             
-            defineContainer().then(function(data) {
-                console.log("CONTAINER", data);
+            defineContainer().then(function(container) {
+                console.log("CONTAINER", container);
                 // get the current opener text node
-                let nodeList = data?.children[0]?.children[0]?.childNodes;
+                let nodeList = container?.children[0]?.children[0]?.childNodes;
                 console.log(nodeList);
                 if (!nodeList) { return false }
                 let currentOpener = nodeList[3].innerText;
