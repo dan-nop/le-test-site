@@ -14,10 +14,9 @@ lpTag.external.dynamicOpeners = {
             lpTag.external.dynamicOpeners.proactiveEngagements.push(eng)
             // if we already have a new opener change it immediately
 
-            lpTag.external.dynamicOpeners.updateEngagementText(eng.engagementId, 'Hey is for horses');
-            // let = _newOpener = 'This is a test! and it"s working';
+            let = _newOpener = 'This is a test! and it"s working';
 
-            // if (_newOpener) lpTag.external.dynamicOpeners.updateEngagementText(eng.engagementId, _newOpener)
+            if (_newOpener) lpTag.external.dynamicOpeners.updateEngagementText(eng.engagementId, _newOpener)
         }
     },
     // this is a separate function so that, if desired in the future, proactive wording can be changed at any time
