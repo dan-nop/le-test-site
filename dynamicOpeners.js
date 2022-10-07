@@ -15,7 +15,7 @@ lpTag.external.dynamicOpeners = {
             // if we already have a new opener change it immediately
 
             let = _newOpener = 'This is a test! and it"s working';
-
+            
             if (_newOpener) lpTag.external.dynamicOpeners.updateEngagementText(eng.engagementId, _newOpener)
         }
     },
@@ -27,16 +27,10 @@ lpTag.external.dynamicOpeners = {
                 return eng.engagementId === engagementId
             })
 
-            // get the container
-            async function defineContainer() {
-                document.addEventListener('DOMContentLoaded', function() {
-                    let container = document.getElementById(eng.container);
-                    return container;
-                })
-            }
-            
-            defineContainer().then(function(container) {
-                console.log("CONTAINER", container);
+            document.addEventListener('DOMContentLoaded', function() {
+                 // get the container
+                let container = document.getElementById(eng.container);
+                console.log(container);
                 // get the current opener text node
                 let nodeList = container?.children[0]?.children[0]?.childNodes;
                 console.log(nodeList);
@@ -60,7 +54,7 @@ lpTag.external.dynamicOpeners = {
                     eng.modified = true;
                     eng.newOpener = newOpener;
                 }
-            });
+            })
         }
         catch (e) {
             console.error(e)
