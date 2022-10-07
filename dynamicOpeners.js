@@ -29,8 +29,10 @@ lpTag.external.dynamicOpeners = {
 
             // get the container
             async function defineContainer() {
-                let container = document.getElementById(eng.container);
-                return container
+                document.addEventListener('DOMContentLoaded', function() {
+                    let container = document.getElementById(eng.container);
+                    return container;
+                })
             }
             
             defineContainer().then(function(container) {
