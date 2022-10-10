@@ -88,9 +88,7 @@ lpTag.external.dynamicOpeners = {
 };
 
 // do stuff
-window.onload = function afterLoad() {
     lpTag.events.bind('RENDERER_STUB','AFTER_CREATE_ENGAGEMENT_INSTANCE',lpTag.external.dynamicOpeners.identifyProactiveEngagementContainer)
     lpTag.events.bind('lpUnifiedWindow','windowClosed', () => window.localStorage.removeItem('dynamicOpeners.modifiedWelcomeMessage'))
     lpTag.hooks.push({ name: 'AFTER_GET_LINES', callback: lpTag.external.dynamicOpeners.updateWelcomeMessage })
-}
 
