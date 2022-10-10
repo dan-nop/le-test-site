@@ -27,31 +27,37 @@ lpTag.external.dynamicOpeners = {
                 return eng.engagementId === engagementId
             });
             // get the container
-            let container = document.getElementById(eng.container);
-            console.log("CONTAINER", container);
-            // get the current opener text node
-            let nodeList = container?.children[0]?.children[0]?.childNodes;
-            console.log("NODELIST", nodeList);
-            if (!nodeList) { return false }
-            let currentOpener = nodeList[3].innerText;
 
-            // how tall is the container for the displayed engagement?
-            let currentHeight = parseInt(container.children[0].style.height);
-            // how tall is the speech bubble on the displayed engagement?
-            let currentBubbleHeight = container.children[0].children[0].clientHeight;
+            setTimeout(getContainer, 2000);
+            function getContainer() {
+                let container = document.getElementById(eng.container);
+                console.log("CONTAINER", container);
+                // get the current opener text node
+                let nodeList = container?.children[0]?.children[0]?.childNodes;
+                console.log("NODELIST", nodeList);
+                if (!nodeList) { return false }
+                let currentOpener = nodeList[3].innerText;
 
-            // replace the engagement text
-            if (currentOpener) {
-                nodeList[3].innerText = newOpener;
-                // how much has the height of the bubble changed due to the new text?
-                let newBubbleHeight = container.children[0].children[0].clientHeight;
-                // change the height of the engagement to account for the new bubble size and keep it aligned to the sticky
-                let newHeight = currentHeight - (currentBubbleHeight - newBubbleHeight);
-                container.children[0].style.height = newHeight+'px';
-                // identify that this engagement was modified in the mapping
-                eng.modified = true;
-                eng.newOpener = newOpener;
+                // how tall is the container for the displayed engagement?
+                let currentHeight = parseInt(container.children[0].style.height);
+                // how tall is the speech bubble on the displayed engagement?
+                let currentBubbleHeight = container.children[0].children[0].clientHeight;
+
+                // replace the engagement text
+                if (currentOpener) {
+                    nodeList[3].innerText = newOpener;
+                    // how much has the height of the bubble changed due to the new text?
+                    let newBubbleHeight = container.children[0].children[0].clientHeight;
+                    // change the height of the engagement to account for the new bubble size and keep it aligned to the sticky
+                    let newHeight = currentHeight - (currentBubbleHeight - newBubbleHeight);
+                    container.children[0].style.height = newHeight+'px';
+                    // identify that this engagement was modified in the mapping
+                    eng.modified = true;
+                    eng.newOpener = newOpener;
+                }
             }
+            
+            
         }
         catch (e) {
             console.error(e)
