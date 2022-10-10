@@ -26,10 +26,10 @@ lpTag.external.dynamicOpeners = {
             let eng = lpTag.external.dynamicOpeners.proactiveEngagements.reverse().find(eng => {
                 return eng.engagementId === engagementId
             });
-            // get the container
 
-            setTimeout(getContainer, 2000);
+            setTimeout(getContainer, 500);
             function getContainer() {
+                // get the container
                 let container = document.getElementById(eng.container);
                 console.log("CONTAINER", container);
                 // get the current opener text node
