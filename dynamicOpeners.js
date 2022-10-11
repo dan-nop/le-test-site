@@ -26,6 +26,9 @@ lpTag.external.dynamicOpeners = {
             let eng = lpTag.external.dynamicOpeners.proactiveEngagements.reverse().find(eng => {
                 return eng.engagementId === engagementId
             });
+
+            setTimeout(getContainer, 10);
+            function getContainer() {
                 // get the container
                 let container = document.getElementById(eng.container);
                 console.log("CONTAINER", container);
@@ -54,7 +57,7 @@ lpTag.external.dynamicOpeners = {
                     eng.modified = true;
                     eng.newOpener = newOpener;
                 }
-            
+            }
         }
         catch (e) {
             console.error(e)
