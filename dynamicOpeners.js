@@ -27,7 +27,7 @@ lpTag.external.dynamicOpeners = {
                 return eng.engagementId === engagementId
             });
 
-            setTimeout(getContainer, 100);
+            setTimeout(getContainer, 10);
             function getContainer() {
                 // get the container
                 let container = document.getElementById(eng.container);
@@ -35,7 +35,9 @@ lpTag.external.dynamicOpeners = {
                 // get the current opener text node
                 let nodeList = container?.children[0]?.children[0]?.childNodes;
                 console.log("NODELIST", nodeList);
-                if (!nodeList) { return false }
+                if (!nodeList) {
+                    lpTag.external.dynamicOpeners.updateEngagementText(engagementId, newOpener);
+                }
                 let currentOpener = nodeList[3].innerText;
 
                 // how tall is the container for the displayed engagement?
