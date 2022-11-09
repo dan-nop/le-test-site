@@ -1,6 +1,7 @@
 lpTag.external = lpTag.external || {};
 lpTag.external.updateZIndex = {
     overideZIndex: function (data) {
+        console.log(data);
         let stickyBtn = document.querySelector('div[id^="LPMcontainer"][role="button"]');
         console.log(stickyBtn);
         if (stickyBtn === null) {
