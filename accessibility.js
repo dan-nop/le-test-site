@@ -68,7 +68,7 @@ lpTag.external.zIndex = {
     findSticky: function (data) {
         console.log("ENG. EngType", data.msg.engagementType);
         if (data.msg.engagementType === 6) {
-            setTimeout(lpTag.external.zIndex.updateZIndex(data), 50);
+            setTimeout(lpTag.external.zIndex.updateZIndex(data), 100);
         } else {
             console.log("no sticky found");
         }
