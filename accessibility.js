@@ -68,16 +68,16 @@ lpTag.external.zIndex = {
     findSticky: function (data) {
         console.log("ENG. EngType", data.msg.engagementType);
         if (data.msg.engagementType === 6) {
-            setTimeout(lpTag.external.zIndex.updateZIndex(), 100);
+            lpTag.external.zIndex.updateZIndex(data);
         } else {
             console.log("no sticky found");
         }
     },
-    updateZIndex: function() {
+    updateZIndex: function(data) {
         stickyBtn = document.querySelector('div[id^="LPMcontainer"][role="button"]');
         console.log(stickyBtn);
         if (stickyBtn === null) {
-            lpTag.external.zIndex.findSticky();
+            lpTag.external.zIndex.findSticky(data);
         } else {
             stickyBtn.style.zIndex = "100000";
         }
