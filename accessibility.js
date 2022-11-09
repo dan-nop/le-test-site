@@ -69,22 +69,17 @@ lpTag.external.zIndex = {
     findSticky: function (data) {
         console.log("ENG. EngType", data.msg.engagementType);
         if (data.msg.engagementType === 6) {
-            stickyBtn = document.querySelector('div[id^="LPMcontainer"][role="button"]');
-            console.log(stickyBtn);
-            if (stickyBtn === null) {
-                lpTag.external.zIndex.findSticky();
-            } else {
-                lpTag.external.zIndex.updateZIndex();
-            }
+            setTimeout(lpTag.external.zIndex.updateZIndex(), 50);
         } else {
             console.log("no sticky found");
         }
     },
     updateZIndex: function() {
+        stickyBtn = document.querySelector('div[id^="LPMcontainer"][role="button"]');
+        console.log(stickyBtn);
         stickyBtn.style.zIndex = "100000";
     }
-}
-
+};
 
 lpTag.events.bind('LP_OFFERS','OFFER_IMPRESSION', lpTag.external.accessibilityFix.engagementRenderedHandler);
 lpTag.events.bind('RENDERER_STUB','AFTER_CREATE_ENGAGEMENT_INSTANCE',lpTag.external.zIndex.findSticky);
