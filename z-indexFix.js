@@ -3,6 +3,11 @@ lpTag.external.updateZIndex = {
     overideZIndex: function (data) {
         let stickyBtn = document.querySelector('div[id^="LPMcontainer"][role="button"]');
         console.log(stickyBtn);
+        if (stickyBtn === null) {
+            return;
+        } else {
+            stickyBtn.style.zIndex = "100000";
+        }
 
     }
 }
