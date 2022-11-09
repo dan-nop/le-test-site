@@ -2,9 +2,7 @@
 lpTag.external = lpTag.external || {};
 lpTag.external.accessibilityFix = {
     // handle the offer_impression event
-    engagementRenderedHandler: function (data) {
-        console.log("ACCESSIBILITY", data);
-        
+    engagementRenderedHandler: function (data) {        
         try {
             // is this an embedded button (engagementType 5) and an HTML engagement (renderingType 1)
             if (data.engagementType === 5 && data.renderingType === 1) {
@@ -67,24 +65,23 @@ lpTag.external.accessibilityFix = {
 
 lpTag.external.updateZIndex = {
     overideZIndex: function (data) {
-        // console.log("DATA", data);
         console.log("ENG. EngType", data.msg.engagementType);
         if (data.msg.engagementType === 6) {
+            console.log(data);
             setTimeout (updateZIndex, 5);
             function updateZIndex() {
                 let stickyBtn = document.querySelector('div[id^="LPMcontainer"][role="button"]');
                 console.log(stickyBtn);
                 if (stickyBtn === null) {
-                updateZIndex();
+                    console.log("NULL????"); 
+                    updateZIndex();
                 } else {
                 stickyBtn.style.zIndex = "100000";
                 }
             }
-         
         } else {
             console.log("no sticky found");
         }
-        
     }
 }
 
