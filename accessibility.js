@@ -1,5 +1,6 @@
 // put custom code in lpTag.external to keep the js namespace clean
 lpTag.external = lpTag.external || {};
+
 lpTag.external.accessibilityFix = {
     // handle the offer_impression event
     engagementRenderedHandler: function (data) {        
@@ -63,28 +64,27 @@ lpTag.external.accessibilityFix = {
     }
 };
 
-lpTag.external.updateZIndex = {
-    overideZIndex: function (data) {
+lpTag.external.zIndex = {
+    stickyBtn: {},
+    findSticky: function (data) {
         console.log("ENG. EngType", data.msg.engagementType);
         if (data.msg.engagementType === 6) {
-            console.log(data);
-            setTimeout (updateZIndex, 5);
-            function updateZIndex() {
-                let stickyBtn = document.querySelector('div[id^="LPMcontainer"][role="button"]');
-                console.log(stickyBtn);
-                if (stickyBtn === null) {
-                    console.log("NULL????"); 
-                    updateZIndex();
-                } else {
-                stickyBtn.style.zIndex = "100000";
-                }
+            stickyBtn = document.querySelector('div[id^="LPMcontainer"][role="button"]');
+            console.log(stickyBtn);
+            if (stickyBtn === null) {
+                lpTag.external.zIndex.findSticky();
+            } else {
+                lpTag.external.zIndex.updateZIndex();
             }
         } else {
             console.log("no sticky found");
         }
+    },
+    updateZIndex: function() {
+        stickyBtn.style.zIndex = "100000";
     }
 }
 
 
 lpTag.events.bind('LP_OFFERS','OFFER_IMPRESSION', lpTag.external.accessibilityFix.engagementRenderedHandler);
-lpTag.events.bind('RENDERER_STUB','AFTER_CREATE_ENGAGEMENT_INSTANCE',lpTag.external.updateZIndex.overideZIndex);
+lpTag.events.bind('RENDERER_STUB','AFTER_CREATE_ENGAGEMENT_INSTANCE',lpTag.external.zIndex.findSticky);
