@@ -74,7 +74,7 @@ lpTag.external.zIndex = {
         }
     },
     updateZIndex: function(data) {
-        stickyBtn = document.querySelector('div[id^="LPMcontainer"][role="button"]');
+        let stickyBtn = document.querySelector('div[id^="LPMcontainer"][role="button"]');
         console.log(stickyBtn);
         if (stickyBtn === null) {
             lpTag.external.zIndex.findSticky(data);
