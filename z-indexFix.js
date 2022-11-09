@@ -1,15 +1,20 @@
 lpTag.external = lpTag.external || {};
 lpTag.external.updateZIndex = {
     overideZIndex: function (data) {
-        console.log("DATA", data);
+        // console.log("DATA", data);
         console.log("ENG. EngType", data.msg.engagementType);
-        // let stickyBtn = document.querySelector('div[id^="LPMcontainer"][role="button"]');
-        // console.log(stickyBtn);
-        // if (stickyBtn === null) {
-        //     return;
-        // } else {
-        //     stickyBtn.style.zIndex = "100000";
-        // }
+        if (data.msg.engagementType === 6) {
+            let stickyBtn = document.querySelector('div[id^="LPMcontainer"][role="button"]');
+            console.log(stickyBtn);
+            if (stickyBtn === null) {
+            return;
+            } else {
+            stickyBtn.style.zIndex = "100000";
+            }
+        } else {
+            console.log("no existing sticky");
+        }
+        
     }
 }
 
