@@ -8,7 +8,6 @@ lpTag.external.updateZIndex = {
         } else {
             stickyBtn.style.zIndex = "100000";
         }
-
     }
 }
 
