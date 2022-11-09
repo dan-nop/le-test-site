@@ -4,6 +4,7 @@ lpTag.external.updateZIndex = {
         // console.log("DATA", data);
         console.log("ENG. EngType", data.msg.engagementType);
         if (data.msg.engagementType === 6) {
+            setTimeout (update)
             let stickyBtn = document.querySelector('div[id^="LPMcontainer"][role="button"]');
             console.log(stickyBtn);
             if (stickyBtn === null) {
@@ -12,10 +13,10 @@ lpTag.external.updateZIndex = {
             stickyBtn.style.zIndex = "100000";
             }
         } else {
-            console.log("no existing sticky");
+            return;
         }
         
     }
 }
 
-lpTag.events.bind('RENDERER_STUB','AFTER_CREATE_ENGAGEMENT_INSTANCE',lpTag.external.updateZIndex.overideZIndex)
+lpTag.events.bind('RENDERER_STUB','AFTER_CREATE_ENGAGEMENT_INSTANCE',lpTag.external.updateZIndex.overideZIndex);
