@@ -58,6 +58,9 @@ lpTag.external.accessibilityFix = {
                     //     selectedDivLpm.setAttribute('tabindex', '-1');
                     // }
                 }
+            } else if (data.engagementType === 6 && data.renderingType === 0) {
+                let stickyBtn = document.querySelector('div[id^="LPMcontainer"][role="button"]');
+                console.log(stickyBtn);
             }
         } catch (e) {
             console.error();
