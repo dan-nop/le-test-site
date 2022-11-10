@@ -77,4 +77,4 @@ lpTag.external.accessibilityFix = {
 };
 
 lpTag.events.bind('LP_OFFERS','OFFER_IMPRESSION', lpTag.external.accessibilityFix.engagementRenderedHandler);
-lpTag.events.bind('LP_OFFERS','OFFER_CLICK', lpTag.external.accessibilityFix.engagementRenderedHandler);
+lpTag.events.bind('LP_OFFERS','OFFER_CLICK', lpTag.external.accessibilityFix.offerClickHandler);
