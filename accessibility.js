@@ -72,7 +72,8 @@ lpTag.external.accessibilityFix = {
     },
     // handle the OFFER_CLICK event
     offerClickHandler: function(data) {
-        console.log("Clicked Engagement", data.engagementName, data.engagementId);
+        console.log(data);
+        // console.log("Clicked Engagement", data.engagementName, data.engagementId);
     }
 };
 
