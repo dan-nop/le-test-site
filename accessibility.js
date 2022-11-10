@@ -3,7 +3,8 @@ lpTag.external = lpTag.external || {};
 
 lpTag.external.accessibilityFix = {
     // handle the offer_impression event
-    engagementRenderedHandler: function (data) {        
+    engagementRenderedHandler: function (data) {   
+        console.log("RendererData", data);     
         try {
             // is this an embedded button (engagementType 5) and an HTML engagement (renderingType 1)
             if (data.engagementType === 5 && data.renderingType === 1) {
@@ -64,25 +65,25 @@ lpTag.external.accessibilityFix = {
     }
 };
 
-lpTag.external.zIndex = {
-    findSticky: function (data) {
-        console.log("ENG. EngType", data.msg.engagementType);
-        if (data.msg.engagementType === 6) {
-            setTimeout(lpTag.external.zIndex.updateZIndex(data), 100);
-        } else {
-            console.log("no sticky found");
-        }
-    },
-    updateZIndex: function(data) {
-        let stickyBtn = document.querySelector('div[id^="LPMcontainer"][role="button"]');
-        console.log(stickyBtn);
-        if (stickyBtn === null) {
-            lpTag.external.zIndex.findSticky(data);
-        } else {
-            stickyBtn.style.zIndex = "100000";
-        }
-    }
-};
+// lpTag.external.zIndex = {
+//     findSticky: function (data) {
+//         console.log("ENG. EngType", data.msg.engagementType);
+//         if (data.msg.engagementType === 6) {
+//             setTimeout(lpTag.external.zIndex.updateZIndex(data), 100);
+//         } else {
+//             console.log("no sticky found");
+//         }
+//     },
+//     updateZIndex: function(data) {
+//         let stickyBtn = document.querySelector('div[id^="LPMcontainer"][role="button"]');
+//         console.log(stickyBtn);
+//         if (stickyBtn === null) {
+//             lpTag.external.zIndex.findSticky(data);
+//         } else {
+//             stickyBtn.style.zIndex = "100000";
+//         }
+//     }
+// };
 
 lpTag.events.bind('LP_OFFERS','OFFER_IMPRESSION', lpTag.external.accessibilityFix.engagementRenderedHandler);
-lpTag.events.bind('RENDERER_STUB','AFTER_CREATE_ENGAGEMENT_INSTANCE',lpTag.external.zIndex.findSticky);
+// lpTag.events.bind('RENDERER_STUB','AFTER_CREATE_ENGAGEMENT_INSTANCE',lpTag.external.zIndex.findSticky);
