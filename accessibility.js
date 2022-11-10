@@ -65,7 +65,7 @@ lpTag.external.accessibilityFix = {
                 //target sticky parent container and update z-index to be lower than the overlay parent container 
                 let stickyBtn = document.querySelector('div[id^="LPMcontainer"][role="button"]');
                 // console.log(stickyBtn);
-                stickyBtn.style.zIndex = 100000;
+                // stickyBtn.style.zIndex = 100000;
                 stickyBtn.style.cursor = "pointer";
             }
         } catch (e) {
