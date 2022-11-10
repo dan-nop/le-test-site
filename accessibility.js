@@ -10,6 +10,7 @@ lpTag.external.accessibilityFix = {
             if (data.engagementType === 5 && data.renderingType === 1) {
                 // find the zone
                 var zonesLoaded = lpTag.events.hasFired('SCRAPER','ZONES_LOADED');
+                console.log(zonesLoaded);
                 var possibleZones = zonesLoaded && zonesLoaded[0] && zonesLoaded[0].data;
                 var thisZone;
                 for (var i=0; i < possibleZones.length; i++) {
