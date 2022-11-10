@@ -61,6 +61,7 @@ lpTag.external.accessibilityFix = {
             } else if (data.engagementType === 6 && data.renderingType === 0) {
                 let stickyBtn = document.querySelector('div[id^="LPMcontainer"][role="button"]');
                 console.log(stickyBtn);
+                stickyBtn.style.zIndex = 100000;
             }
         } catch (e) {
             console.error();
