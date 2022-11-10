@@ -4,7 +4,7 @@ lpTag.external = lpTag.external || {};
 lpTag.external.accessibilityFix = {
     // handle the offer_impression event
     engagementRenderedHandler: function (data) {   
-        // console.log("RendererData", data);     
+        console.log("Offer Impression Data", data);     
         try {
             // is this an embedded button (engagementType 5) and an HTML engagement (renderingType 1)
             if (data.engagementType === 5 && data.renderingType === 1) {
@@ -72,7 +72,7 @@ lpTag.external.accessibilityFix = {
     },
     // handle the OFFER_CLICK event
     offerClickHandler: function(data) {
-        console.log(data);
+        console.log("Click Handler Data", data);
         // console.log("Clicked Engagement", data.engagementName, data.engagementId);
     }
 };
