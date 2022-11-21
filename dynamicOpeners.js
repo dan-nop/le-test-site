@@ -21,13 +21,12 @@ lpTag.external.dynamicOpeners = {
     },
     // this is a separate function so that, if desired in the future, proactive wording can be changed at any time
     updateEngagementText: function (engagementId, newOpener) {
+        console.log("proactive div", eng);
         try {
             // find the relevant entry in the engagementId:container mapping
             let eng = lpTag.external.dynamicOpeners.proactiveEngagements.reverse().find(eng => {
                 return eng.engagementId === engagementId
             });
-
-            console.log("proactive div", eng);
  
                 // get the container
                 let container = document.getElementById(eng.container);
