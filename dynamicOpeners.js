@@ -27,8 +27,7 @@ lpTag.external.dynamicOpeners = {
                 return eng.engagementId === engagementId
             });
 
-            setTimeout(getContainer, 1);
-            function getContainer() {
+ 
                 // get the container
                 let container = document.getElementById(eng.container);
                 console.log("CONTAINER", container);
@@ -57,7 +56,7 @@ lpTag.external.dynamicOpeners = {
                     eng.modified = true;
                     eng.newOpener = newOpener;
                 }
-            }
+            
         }
         catch (e) {
             console.error(e)
@@ -88,7 +87,8 @@ lpTag.external.dynamicOpeners = {
 };
 
 // do stuff
-    lpTag.events.bind('RENDERER_STUB','AFTER_CREATE_ENGAGEMENT_INSTANCE',lpTag.external.dynamicOpeners.identifyProactiveEngagementContainer)
+    // lpTag.events.bind('RENDERER_STUB','AFTER_CREATE_ENGAGEMENT_INSTANCE',lpTag.external.dynamicOpeners.identifyProactiveEngagementContainer)
+    lpTag.events.bind('LP_OFFERS','OFFER_IMPRESSION', lpTag.external.dynamicOpeners.identifyProactiveEngagementContainer)
     lpTag.events.bind('lpUnifiedWindow','windowClosed', () => window.localStorage.removeItem('dynamicOpeners.modifiedWelcomeMessage'))
     lpTag.hooks.push({ name: 'AFTER_GET_LINES', callback: lpTag.external.dynamicOpeners.updateWelcomeMessage })
 
