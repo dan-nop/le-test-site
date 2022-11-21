@@ -6,6 +6,7 @@ lpTag.external.dynamicOpeners = {
         // is proactive
         if (data?.conf?.type === 1) {
             // store the engagementId:container mapping
+            console.log("found overlay!");
             let eng = {
                 engagementId: data?.eng?.engData?.engagementId,
                 container: data?.eng?.containerId,
