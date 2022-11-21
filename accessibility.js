@@ -3,14 +3,12 @@ lpTag.external = lpTag.external || {};
 
 lpTag.external.accessibilityFix = {
     // handle the offer_impression event
-    engagementRenderedHandler: function (data) {   
-        console.log("Offer Impression Data", data);     
+    engagementRenderedHandler: function (data) {      
         try {
             // is this an embedded button (engagementType 5) and an HTML engagement (renderingType 1)
             if (data.engagementType === 5 && data.renderingType === 1) {
                 // find the zone
                 var zonesLoaded = lpTag.events.hasFired('SCRAPER','ZONES_LOADED');
-                console.log(zonesLoaded);
                 var possibleZones = zonesLoaded && zonesLoaded[0] && zonesLoaded[0].data;
                 var thisZone;
                 for (var i=0; i < possibleZones.length; i++) {
@@ -64,7 +62,7 @@ lpTag.external.accessibilityFix = {
             } else if (data.engagementType === 6 && data.renderingType === 0) {
                 //target sticky parent container and update z-index to be lower than the overlay parent container 
                 let stickyBtn = document.querySelector('div[id^="LPMcontainer"][role="button"]');
-                console.log(stickyBtn);
+                // console.log(stickyBtn);
                 stickyBtn.style.zIndex = 100000;
             }
         } catch (e) {
@@ -72,11 +70,11 @@ lpTag.external.accessibilityFix = {
         }
     },
     // handle the OFFER_CLICK event
-    offerClickHandler: function(data) {
-        console.log("Click Handler Data", data);
-        // console.log("Clicked Engagement", data.engagementName, data.engagementId);
-    }
+    // offerClickHandler: function(data) {
+    //     console.log("Click Handler Data", data);
+    //     // console.log("Clicked Engagement", data.engagementName, data.engagementId);
+    // }
 };
 
 lpTag.events.bind('LP_OFFERS','OFFER_IMPRESSION', lpTag.external.accessibilityFix.engagementRenderedHandler);
-lpTag.events.bind('LP_OFFERS','OFFER_CLICK', lpTag.external.accessibilityFix.offerClickHandler);
+// lpTag.events.bind('LP_OFFERS','OFFER_CLICK', lpTag.external.accessibilityFix.offerClickHandler);
