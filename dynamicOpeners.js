@@ -19,6 +19,14 @@ lpTag.external.dynamicOpeners = {
             if (_newOpener) lpTag.external.dynamicOpeners.updateEngagementText(eng.engagementId, _newOpener)
         } else if (data?.conf?.type === 6) {
             console.log("found sticky");
+             // store the engagementId:container mapping
+             let eng = {
+                engagementId: data?.eng?.engData?.engagementId,
+                container: data?.eng?.containerId,
+                modified: true
+            }
+            lpTag.external.dynamicOpeners.proactiveEngagements.push(eng)
+
         }
     },
     // this is a separate function so that, if desired in the future, proactive wording can be changed at any time
