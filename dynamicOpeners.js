@@ -85,6 +85,7 @@ lpTag.external.dynamicOpeners = {
         //  OR "dynamicOpeners.windowModified" is true in local storage (this window was left open for a navigation/reload after modification)
         // modify the welcome message
         let modifiedEngagement = lpTag.external.dynamicOpeners.proactiveEngagements.find(eng => { return eng.engagementId === clickedEngagementId && eng.modified })
+        console.log("modified Eng", modifiedEngagement);
         if (modifiedEngagement || window.localStorage.getItem('dynamicOpeners.modifiedWelcomeMessage')) {
             event.data.lines.forEach(line => {
                 if (!line.isWelcomeMessage) return
