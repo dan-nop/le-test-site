@@ -78,7 +78,8 @@ lpTag.external.dynamicOpeners = {
         if (lpTag.events.hasFired('lpUnifiedWindow','state').reverse()[0].data.state !== 'waiting') return;
 
         // find the ID of the most recently clicked engagement
-        let clickedEngagementId = lpTag.events.hasFired('LP_OFFERS', 'OFFER_CLICK').reverse()[0]?.data?.engagementId
+        let clickedEngagementId = lpTag.events.hasFired('LP_OFFERS', 'OFFER_CLICK').reverse()[0]?.data?.engagementId;
+        console.log(clickedEngagementId);
         // if either
         //  the clicked engagement in the mapping && we modified the engagement wording
         //  OR "dynamicOpeners.windowModified" is true in local storage (this window was left open for a navigation/reload after modification)
@@ -98,7 +99,7 @@ lpTag.external.dynamicOpeners = {
 };
 
 // do stuff
-    lpTag.events.bind('RENDERER_STUB','AFTER_CREATE_ENGAGEMENT_INSTANCE',lpTag.external.dynamicOpeners.identifyProactiveEngagementContainer)
-    lpTag.events.bind('lpUnifiedWindow','windowClosed', () => window.localStorage.removeItem('dynamicOpeners.modifiedWelcomeMessage'))
-    lpTag.hooks.push({ name: 'AFTER_GET_LINES', callback: lpTag.external.dynamicOpeners.updateWelcomeMessage })
+    lpTag.events.bind('RENDERER_STUB','AFTER_CREATE_ENGAGEMENT_INSTANCE',lpTag.external.dynamicOpeners.identifyProactiveEngagementContainer);
+    lpTag.events.bind('lpUnifiedWindow','windowClosed', () => window.localStorage.removeItem('dynamicOpeners.modifiedWelcomeMessage'));
+    lpTag.hooks.push({ name: 'AFTER_GET_LINES', callback: lpTag.external.dynamicOpeners.updateWelcomeMessage });
 
