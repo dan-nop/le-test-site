@@ -71,6 +71,7 @@ lpTag.external.changeTextSize = {
             console.log("Click Handler Data", data);
         // console.log("Clicked Engagement", data.engagementName, data.engagementId);
             let iconDiv = document.getElementsByClassName("lp_headebuttons-container");
+            console.log(iconDiv);
             let largeText = document.createElement("div");
             let smallText = document.createElement("div");
             largeText.setAttribute("id", "lp_largeTextIcon");
