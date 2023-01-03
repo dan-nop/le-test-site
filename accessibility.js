@@ -59,8 +59,6 @@ lpTag.external.accessibilityFix = {
                 }
             
             // Is this a sticky button (engagementType 6 and an HTML engagement renderingtype 0)
-            } else if (data.eventName = "SHOW") {
-                console.log
             }
         } catch (e) {
             console.error();
