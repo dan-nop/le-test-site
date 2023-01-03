@@ -63,13 +63,19 @@ lpTag.external.accessibilityFix = {
         } catch (e) {
             console.error();
         }
-    },
-    changeTextSize: {   
-    offerClickHandler: function(data) {
-        console.log("Click Handler Data", data);
-        // console.log("Clicked Engagement", data.engagementName, data.engagementId);
-    }}
+    }
 };
+lpTag.external.changeTextSize = {   
+    offerClickHandler: function(data) {
+        try {
+            console.log("Click Handler Data", data);
+        // console.log("Clicked Engagement", data.engagementName, data.engagementId);
+        } catch (e) {
+            console.error();
+        }
+        
+    }
+}
 
 lpTag.events.bind('LP_OFFERS','OFFER_IMPRESSION', lpTag.external.accessibilityFix.engagementRenderedHandler);
 // lpTag.events.bind('LP_OFFERS','OFFER_CLICK', lpTag.external.accessibilityFix.offerClickHandler);
