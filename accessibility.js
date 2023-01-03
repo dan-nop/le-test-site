@@ -4,7 +4,6 @@ lpTag.external = lpTag.external || {};
 lpTag.external.accessibilityFix = {
     // handle the offer_impression event
     engagementRenderedHandler: function (data) {      
-        console.log(data);
         try {
             // is this an embedded button (engagementType 5) and an HTML engagement (renderingType 1)
             if (data.engagementType === 5 && data.renderingType === 1) {
@@ -60,17 +59,20 @@ lpTag.external.accessibilityFix = {
                 }
             
             // Is this a sticky button (engagementType 6 and an HTML engagement renderingtype 0)
+            } else if (data.eventName = "SHOW") {
+                console.log
             }
         } catch (e) {
             console.error();
         }
     },
-    // handle the OFFER_CLICK event
-    // offerClickHandler: function(data) {
-    //     console.log("Click Handler Data", data);
-    //     // console.log("Clicked Engagement", data.engagementName, data.engagementId);
-    // }
+    changeTextSize: {   
+    offerClickHandler: function(data) {
+        console.log("Click Handler Data", data);
+        // console.log("Clicked Engagement", data.engagementName, data.engagementId);
+    }}
 };
 
 lpTag.events.bind('LP_OFFERS','OFFER_IMPRESSION', lpTag.external.accessibilityFix.engagementRenderedHandler);
 // lpTag.events.bind('LP_OFFERS','OFFER_CLICK', lpTag.external.accessibilityFix.offerClickHandler);
+lpTag.events.bind('LP_OFFERS', 'OFFER_CLICK', lpTag.external.changeTextSize.offerClickHandler);
