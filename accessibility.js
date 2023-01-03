@@ -70,6 +70,13 @@ lpTag.external.changeTextSize = {
         try {
             console.log("Click Handler Data", data);
         // console.log("Clicked Engagement", data.engagementName, data.engagementId);
+            let iconDiv = document.getElementsByClassName("lp_headebuttons-container");
+            let largeText = document.createElement("div");
+            let smallText = document.createElement("div");
+            largeText.setAttribute("id", "lp_largeTextIcon");
+            smallText.setAttribute("id", "lp_smallTextIcon");
+            let largeTextIcon = document.getElementById("lp_largeTextIcon").innerHTML = "<img src ='https://res.cloudinary.com/navomidan/image/upload/c_scale,w_48/v1672771560/211690_up_arrow_icon_a4srst.svg'></img>";
+            iconDiv.appendChild(largeTextIcon);
         } catch (e) {
             console.error();
         }
