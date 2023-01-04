@@ -66,18 +66,18 @@ lpTag.external.accessibilityFix = {
     }
 };
 lpTag.external.changeTextSize = {   
-    offerClickHandler: function(data) {
+    windowInitialized: function(data) {
         try {
             console.log("Click Handler Data", data);
         // console.log("Clicked Engagement", data.engagementName, data.engagementId);
-            let iconDiv = document.getElementsByClassName("lp_headebuttons-container");
-            console.log(iconDiv);
-            let largeText = document.createElement("div");
-            let smallText = document.createElement("div");
-            largeText.setAttribute("id", "lp_largeTextIcon");
-            smallText.setAttribute("id", "lp_smallTextIcon");
-            let largeTextIcon = document.getElementById("lp_largeTextIcon").innerHTML = "<img src ='https://res.cloudinary.com/navomidan/image/upload/c_scale,w_48/v1672771560/211690_up_arrow_icon_a4srst.svg'></img>";
-            iconDiv.appendChild(largeTextIcon);
+            // let iconDiv = document.getElementsByClassName("lp_headebuttons-container");
+            // console.log(iconDiv);
+            // let largeText = document.createElement("div");
+            // let smallText = document.createElement("div");
+            // largeText.setAttribute("id", "lp_largeTextIcon");
+            // smallText.setAttribute("id", "lp_smallTextIcon");
+            // let largeTextIcon = document.getElementById("lp_largeTextIcon").innerHTML = "<img src ='https://res.cloudinary.com/navomidan/image/upload/c_scale,w_48/v1672771560/211690_up_arrow_icon_a4srst.svg'></img>";
+            // iconDiv.appendChild(largeTextIcon);
         } catch (e) {
             console.error();
         }
@@ -87,4 +87,4 @@ lpTag.external.changeTextSize = {
 
 lpTag.events.bind('LP_OFFERS','OFFER_IMPRESSION', lpTag.external.accessibilityFix.engagementRenderedHandler);
 // lpTag.events.bind('LP_OFFERS','OFFER_CLICK', lpTag.external.accessibilityFix.offerClickHandler);
-lpTag.events.bind('lpUnifiedWindow', 'initialised', lpTag.external.changeTextSize.offerClickHandler);
+lpTag.events.bind('lpUnifiedWindow', 'uninitialised', lpTag.external.changeTextSize.windowInitialized);
