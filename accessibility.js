@@ -67,7 +67,8 @@ lpTag.external.accessibilityFix = {
 };
 lpTag.external.changeTextSize = {   
     windowInitialized: function(data) {
-        console.log(data)
+        console.log("preChat?");
+        console.log(data);
         
     }
 }
