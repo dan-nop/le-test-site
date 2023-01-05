@@ -65,14 +65,14 @@ lpTag.external.accessibilityFix = {
         }
     }
 };
-lpTag.external.changeTextSize = {   
-    windowInitialized: function(data) {
-        console.log("preChat?");
-        console.log(data);
+// lpTag.external.changeTextSize = {   
+//     windowInitialized: function(data) {
+//         console.log("preChat?");
+//         console.log(data);
         
-    }
-}
+//     }
+// }
 
 lpTag.events.bind('LP_OFFERS','OFFER_IMPRESSION', lpTag.external.accessibilityFix.engagementRenderedHandler);
 // lpTag.events.bind('LP_OFFERS','OFFER_CLICK', lpTag.external.accessibilityFix.offerClickHandler);
-lpTag.events.bind('lpUnifiedWindow', 'preChat', lpTag.external.changeTextSize.windowInitialized);
+// lpTag.events.bind('lpUnifiedWindow', 'preChat', lpTag.external.changeTextSize.windowInitialized);
