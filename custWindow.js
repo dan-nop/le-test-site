@@ -235,3 +235,62 @@ lpTag.newPage(document.URL, {
     section : ["L1:wireless", "L2:onedp", "L3:landing"]
     });
     
+
+    {
+        "customEngagementCSS": [
+            {
+                "engagementSelector": "[id^='LPMcontainer']",
+                "style": ":focus{outline: 2px dashed #747676 !important;outline-offset: 5px;}"
+            },
+            {
+                "engagementSelector": "[id^='LPMcontainer'] > [role='button']",
+                "style": ":focus{outline: 2px dashed #747676 !important;outline-offset: 5px;}"
+            },
+            {
+                "engagementSelector": "[role='button']",
+                "style": "z-index:100700!important;"
+            },
+            {
+                "engagementSelector": "class=lpc_window_maximized",
+                "style": "height:461px !important; width:360px !important"
+            },
+            {
+                "engagementSelector": "class=lpc_window",
+                "style": "z-index:9997!important;"
+            },
+            {
+                "engagementSelector": "class=lp_desktop",
+                "style": "z-index:9997!important;"
+            }
+        ],
+        "engagement": {
+            "overaly": {
+                "style": "cursor:pointer !important"
+            }
+        },
+        "customWindowCSS": [
+            ".lp_maximized.lpmx.lpc_window.lpc_window_maximized.lpc_desktop {width: 350px!important; height: 461px!important;}",
+            ".lp_maximized.lpmx.lpc_window.lpc_window_maximized.lpc_desktop.lp_floating.lp_maximized_large {width: 350px!important; height: 461px!important;}",
+            ".lp_header.lpc_maximized-header.lpc_desktop {background-color:white!important; border-color:white!important;}",
+            ".lp_top-text.lpc_maximized-header__text.lpc_desktop {font-weight:bold!important;}",
+            ".lp_transcript_widget.lp_lpview_widgetContent.transcript_scroll.lpc_layout.lpc_layout_maximized.lpc_desktop {background-color:white!important;}",
+            ".lp_lpview_mp.lp_main_area {background-color:white!important;}",
+            ".lp_top-text.lpc_maximized-header__text.lpc_desktop {color:black!important;}",
+            ".lpc_message.lpc_message_agent.lpc_message_avatar-hidden.lpc_desktop.lp_new_chat_line {border:unset!important; background-color:#F6F6F6!important;}",
+            ".lpc_message.lpc_message_visitor.lpc_desktop.lp_new_chat_line {border:unset!important; background-color:#747676!important;}",
+            ".lp_title_text.lpc_message__text.lpc_message__text_visitor.lpc_desktop.lp_ltr {color:#ffffff!important;}",
+            ".lpc_banner-image-area.lpc_banner-image-area_maximized.lpc_desktop {display:none!important;}",
+            ".lp_header.lpc_maximized-header.lpc_mobile {background-color:white!important; border-color:white!important;}",
+            ".lp_top-text.lpc_maximized-header__text.lpc_mobile {font-weight:bold!important;}",
+            ".lp_transcript_widget.lp_lpview_widgetContent.transcript_scroll.lpc_layout.lpc_layout_maximized.lpc_desktop {background-color:white!important;}",
+            ".lp_lpview_mp.lp_main_area {background-color:white!important;}",
+            ".lp_top-text.lpc_maximized-header__text.lpc_mobile {color:black!important;}",
+            ".lpc_message.lpc_message_agent.lpc_message_avatar-hidden.lpc_mobile.lp_new_chat_line {border:unset!important; background-color:#F6F6F6!important;}",
+            ".lpc_message.lpc_message_visitor.lpc_mobile.lp_new_chat_line {border:unset!important; background-color:#747676!important;}",
+            ".lp_title_text.lpc_message__text.lpc_message__text_visitor.lpc_mobile.lp_ltr {color:#ffffff!important;}",
+            ".lp_maximized.lpmx.lpc_window.lpc_window_maximized.lpc_mobile {opacity:1!important;}",
+            ".lp_main.lpc_body.lpc_mobile {background-color:white!important;}",
+            ".lp_transcript_widget.lp_lpview_widgetContent.transcript_scroll.lpc_layout.lpc_layout_maximized.lpc_mobile {background-color:white!important;}",
+            ".lpc_banner-image-area.lpc_banner-image-area_maximized.lpc_mobile {display:none!important;}"
+        ]
+    }
