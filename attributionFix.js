@@ -63,7 +63,7 @@ lpTag.external.accessibilityFix = {
 				let stickyBtn = document.querySelector('div[id^="LPMcontainer"][role="button"]');
 				// console.log(stickyBtn);
 				console.log("stickyBtn", stickyBtn);
-                stickyBtn.style.cssText = 'z-index:995 !important';
+                stickyBtn.style.zIndex = 995;
 			}            
         } catch (e) {
             console.error();
