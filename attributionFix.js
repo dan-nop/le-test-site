@@ -3,7 +3,7 @@ lpTag.external = lpTag.external || {};
 lpTag.external.accessibilityFix = {
     // handle the offer_impression event
     engagementRenderedHandler: function (data) {
-        console.log("engagementRenderedHandler");
+        console.log('fire!');
         try {
             // is this an embedded button (engagementType 5) and an HTML engagement (renderingType 1)
             if (data.engagementType === 5 && data.renderingType === 1) {
@@ -61,8 +61,9 @@ lpTag.external.accessibilityFix = {
 				else if (data.engagementType === 6 && data.renderingType === 0) {
 				//target sticky parent container and update z-index to be lower than the overlay parent container 
 				let stickyBtn = document.querySelector('div[id^="LPMcontainer"][role="button"]');
+				// console.log(stickyBtn);
 				console.log("stickyBtn", stickyBtn);
-				stickyBtn.setAtribute('style', 'z-index:995!important');
+                stickyBtn.setAtribute('style', 'z-index:995!important');
 			}            
         } catch (e) {
             console.error();
