@@ -3,7 +3,7 @@ lpTag.external = lpTag.external || {};
 lpTag.external.accessibilityFix = {
     // handle the offer_impression event
     engagementRenderedHandler: function (data) {
-        console.log('fire!');
+        console.log("EVENT DATA", data);
         try {
             // is this an embedded button (engagementType 5) and an HTML engagement (renderingType 1)
             if (data.engagementType === 5 && data.renderingType === 1) {
