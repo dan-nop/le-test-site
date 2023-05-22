@@ -59,6 +59,9 @@ lpTag.external.accessibilityFix = {
                 }
             }	// Is this a sticky button (engagementType 6 and an HTML engagement renderingtype 0)
 				else if (data.engagementType === 6 && data.renderingType === 0) {
+                    if (data.engagementId === '3848605838') {
+                        console.log('found sticky eng!')
+                    }
 				//target sticky parent container and update z-index to be lower than the overlay parent container 
 				let stickyBtn = document.querySelector('div[id^="LPMcontainer"][role="button"]');
 				// console.log(stickyBtn);
