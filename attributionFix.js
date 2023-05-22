@@ -61,6 +61,9 @@ lpTag.external.accessibilityFix = {
 				else if (data.engagementType === 6 && data.renderingType === 0) {
                     console.log("eng ID" + data.engagementId);
                     if (data.engagementId === 3848605838) {
+                        let chatWindow = document.querySelectorAll(".lp_maximized.lpmx.lpc_window.lpc_window_maximized.lpc_desktop");
+
+                        chatWindow.style.setProperty('bottom', '58px', 'important');
                         console.log('found sticky eng!')
                     }
 				//target sticky parent container and update z-index to be lower than the overlay parent container 
